@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: my-Deploy
+
+spec:
+  selector: 
+    matchLabels:
+      app: mohamed
+
+  replicas: 2
+  
+  template: 
+    metadata:
+      name: my-pod
+      labels: 
+        app: mohamed
+
+    spec:
+      containers:
+      - name: my-container
+        image: mohamed2esmael/python-docker
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1" 
+  
